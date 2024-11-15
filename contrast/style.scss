@@ -1,0 +1,30 @@
+:root {
+  --base-color: #2898e2;
+}
+div {
+  --contrast-color: color-contrast(var(--bg-color) vs black, white);
+
+  background: var(--bg-color);
+  color: var(--contrast-color);
+}
+.color-100 {
+  --bg-color: color-mix(in srgb, var(--base-color) 10%, white 100%);
+}
+.color-200 {
+  --bg-color: color-mix(in srgb, var(--base-color) 40%, white 60%);
+}
+.color-300 {
+  --bg-color: color-mix(in srgb, var(--base-color) 70%, white 30%);
+}
+.color-400 {
+  --bg-color: color-mix(in srgb, var(--base-color), white 0%);
+}
+.color-500 {
+  --bg-color: color-mix(in srgb, var(--base-color) 90%, black 10%);
+}
+.color-600 {
+  --bg-color: color-mix(in srgb, var(--base-color) 70%, black 30%);
+}
+.color-700 {
+  --bg-color: color-mix(in srgb, var(--base-color) 40%, black 60%);
+}

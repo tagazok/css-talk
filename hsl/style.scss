@@ -1,0 +1,69 @@
+/* #region Before */
+$base-color    : #2898e2;
+
+$color-mix     : mix($base-color, red, 50%);
+
+$color-light   : lighten($base-color, 40%);
+$color-dark    : darken($base-color, 15%);
+$color-opacity : transparentize($base-color, 0.5);
+/* #endregion */
+
+
+/* #region With CSS Color Module level 5*/
+:root {
+  --base-color    : #2898e2;
+  --color-light   : hsl(from var(--base-color) 300 s 92%);
+  --color-dark    : hsl(from var(--base-color) h s 38%);
+  --color-opacity : hsl(from var(--base-color) h s l / 50%);
+}
+/* #endregion */
+
+
+
+
+.color-100 {
+  --color: hsl(from var(--base-color) h s 80%);
+  background: var(--color);
+}
+
+.color-200 {
+  --color: hsl(from var(--base-color) h s 70%);
+  background: var(--color);
+}
+.color-300 {
+  --color: hsl(from var(--base-color) h s 60%);
+  background: var(--color);
+}
+.color-400 {
+  --color: hsl(from var(--base-color) h s 50%);
+  background: var(--color);
+}
+.color-500 {
+  --color: hsl(from var(--base-color) h s 40%);
+  background: var(--color);
+}
+.color-600 {
+  --color: hsl(from var(--base-color) h s 30%);
+  background: var(--color);
+}
+.color-700 {
+  --color: hsl(from var(--base-color) h s 20%);
+  background: var(--color);
+}
+
+
+
+
+
+// .color-100 {
+//   background: var(--color-light);
+// }
+// .color-200 {
+//   background: var(--color-dark);
+// }
+// .color-300 {
+//   background: var(--color-opacity);
+// }
+// .color-400 {
+//   background: var(--color-mix);
+// }

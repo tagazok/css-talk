@@ -1,0 +1,31 @@
+/* #region Before */
+$base-color    : #2898e2;
+
+$color-light   : lighten($base-color, 40%);
+$color-dark    : darken($base-color, 15%);
+$color-opacity : transparentize($base-color, 0.5);
+$color-mix     : mix($base-color, red, 50%);
+/* #endregion */
+
+/* #region With CSS Color Module level 5*/
+:root {
+  --base-color    : #2898e2;
+  --color-light   : hsl(from var(--base-color) h s 90%);
+  --color-dark    : hsl(from var(--base-color) h s 30%);
+  --color-opacity : hsl(from var(--base-color) h s l / 50%);
+  --color-mix     : color-mix(in srgb, var(--base-color) 50%, red 50%);
+}
+/* #endregion */
+
+.color-100 {
+  background: var(--color-light);
+}
+.color-200 {
+  background: var(--color-dark);
+}
+.color-300 {
+  background: var(--color-opacity);
+}
+.color-400 {
+  background: var(--color-mix);
+}

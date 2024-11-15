@@ -1,0 +1,32 @@
+/* Contrast ratio: 5:1 */
+.contrast {
+  background: #2898e2;
+  color: #222222;
+}
+
+@media (prefers-contrast: more) {
+  /* Contrast ratio: 8.5:1 */
+  .contrast {
+    background: color-mix(in srgb, #2898e2 100%, white 20%);
+    color: #000000;
+  }
+}
+
+
+:root {
+  --base-color: hsl(0, 0%, 100%);
+  --base-color-l: 100;
+  --contrastThreshold: 50;
+}
+
+.auto-contrast {
+  background: var(--base-color);
+  color: color-contrast(var(--base-color) var(--base-color-l) var(--contrastThreshold));
+}
+
+.pseudo-contrast {
+  background: var(--base-color);
+  
+  --switch: calc((var(--base-color-l) - var(--contrastThreshold)) * -100);
+  color: hsl(0, 0%, var(--switch));
+}
